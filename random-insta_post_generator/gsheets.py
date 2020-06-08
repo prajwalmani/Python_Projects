@@ -40,6 +40,7 @@ def gsheetsretrival(sheet, rowvalue):
 def drawimage(list):
     '''
     function to create the text on the image u can change few values based on your need
+    font used in insta story is into repo
     :param list:
     :return:
     '''
