@@ -1,34 +1,16 @@
-"""
-Convert a Doc file to pdf using python with GUI
-"""
-# import libraries
-# tkinter is already in python 3.x  so no need of pip
 import tkinter as tk
-from docx2pdf import convert # pip install docx2pdf
 import tkinter.ttk as ttk
 from tkinter.filedialog import askopenfile
 from tkinter.messagebox import showinfo
-
-# create tkinter window object
+from docx2pdf import convert
 win=tk.Tk()
-win.title("Word to Pdf Converter") #window title
-
+win.title("Word to Pdf Converter App") #window title
 def openfile():
-    """
-    function to convert the file
-    :return:
-    """
     file=askopenfile(filetypes=[('Word Files','*.docx')])
-    convert(file.name,r'C:\Users\prajw\Downloads\converted.pdf') #file path to store the converted pdf file
+    convert(file.name,r'C:\Users\prajw\OneDrive\Desktop\doc2pdf\doc2pdfconverted.pdf') #file path to store the converted pdf file
     showinfo("Done","File successfully converted ")
-
-# create a label
-label=tk.Label(win,text="Choose a file")
-label.grid(row=0,column=0,padx=5,pady=5)
-
-# create a button
+label=tk.Label(win,text="Choose a file!")
+label.grid(row=10,column=5,padx=5,pady=5)
 button=ttk.Button(win,text="Select",width=30,command=openfile())
-button.grid(row=0,column=1,padx=5,pady=5)
-
-# main loop
+button.grid(row=20,column=5,padx=5,pady=5)
 win.mainloop()
