@@ -6,7 +6,7 @@ import cv2
 cap = cv2.VideoCapture(0)
 
 # Create the haar cascade
-faceCascade = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
+faceCascade = cv2.CascadeClassifier("facedetectusingopencv\haarcascade_frontalface_default.xml")
 
 while(True):
 	# Capture frame-by-frame
@@ -20,8 +20,8 @@ while(True):
 		gray,
 		scaleFactor=1.1,
 		minNeighbors=5,
-		minSize=(30, 30)
-		#flags = cv2.CV_HAAR_SCALE_IMAGE
+		minSize=(30, 30),
+		# flags = cv2.CV_HAAR_SCALE_IMAGE
 	)
 
 	print("Found {0} faces!".format(len(faces)))
@@ -32,7 +32,7 @@ while(True):
 
 
 	# Display the resulting frame
-	cv2.imshow('frame', frame)
+	cv2.imshow('Live CAM', frame)
 	if cv2.waitKey(1) & 0xFF == ord('q'):
 		break
 
